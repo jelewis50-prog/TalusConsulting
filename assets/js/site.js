@@ -95,7 +95,8 @@
       education: ['<b>Lesson and quiz drafting</b> aligned to your curriculum.', '<b>Personalized feedback</b> on student work, at scale.', '<b>Admin automation</b> for scheduling, reminders and reports.']
     };
     const ALIAS = { store: 'retail', ecommerce: 'retail', shop: 'retail', medical: 'healthcare', clinic: 'healthcare', dental: 'healthcare', health: 'healthcare', realtor: 'real estate', property: 'real estate', legal: 'law', attorney: 'law', factory: 'manufacturing', food: 'restaurant', cafe: 'restaurant', bar: 'restaurant', contractor: 'construction', builder: 'construction', accounting: 'finance', bank: 'finance', insurance: 'finance', agency: 'marketing', school: 'education', training: 'education' };
-    const generic = x => [`<b>A knowledge assistant</b> that answers your team's questions about ${x} processes instantly.`, `<b>Automated first drafts</b> of the emails, proposals and reports your ${x} team writes every week.`, `<b>Data-driven insights</b> that surface trends in your ${x} numbers before you'd spot them.`];
+    const esc = t => t.replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+    const generic = raw => { const x = esc(raw.slice(0, 60)); return [`<b>A knowledge assistant</b> that answers your team's questions about ${x} processes instantly.`, `<b>Automated first drafts</b> of the emails, proposals and reports your ${x} team writes every week.`, `<b>Data-driven insights</b> that surface trends in your ${x} numbers before you'd spot them.`]; };
     const input = document.getElementById('ask-input'), out = document.getElementById('ask-answer');
     const list = out.querySelector('ol'), cta = out.querySelector('.cta');
     let busy = false;

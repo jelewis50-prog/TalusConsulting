@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-src https://calendly.com; form-action 'self' mailto:; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <title>Talus · AI training for business</title>
 <meta name="description" content="Talus trains companies to adopt AI with practical workshops, courses and implementation support.">
 <link rel="canonical" href="https://talusconsulting.net/">
@@ -12,11 +14,11 @@
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="assets/img/favicon-180.png">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/fonts.css">
 <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header">
   <nav class="wrap nav" aria-label="Main">
     <a class="brand" href="index.html" aria-label="Talus home"><img src="assets/img/talus-logo-navy.svg" alt="Talus"></a>
@@ -24,7 +26,7 @@
     <ul class="nav-links"><li><a href="index.html" aria-current="page">Home</a></li><li><a href="services.html">Services</a></li><li><a href="courses.html">Courses</a></li><li><a href="about.html">About</a></li><li><a class="btn btn-primary btn-small" href="contact.html" style="color:var(--ivory)">Book a call</a></li></ul>
   </nav>
 </header>
-<main>
+<main id="main">
 
 <section class="hero">
   <canvas id="net" aria-hidden="true"></canvas>
@@ -43,7 +45,7 @@
         <button class="btn btn-primary" type="submit">Show me <span class="arr">&rarr;</span></button>
       </form>
       <div class="chips"><button class="chip" type="button">Retail</button><button class="chip" type="button">Healthcare</button><button class="chip" type="button">Real estate</button><button class="chip" type="button">Law</button><button class="chip" type="button">Construction</button><button class="chip" type="button">Finance</button></div>
-      <div class="answer" id="ask-answer" aria-live="polite"><ol></ol><p class="cta">Want a plan built around your business? <a href="contact.html">Book a free discovery call &rarr;</a></p></div>
+      <div class="answer" id="ask-answer" aria-live="polite"><ol></ol><p class="note">Sample ideas from the Talus playbook, shown for illustration. Not a live AI model; real results depend on your business.</p><p class="cta">Want a plan built around your business? <a href="contact.html">Book a free discovery call &rarr;</a></p></div>
     </div>
   </div>
 </section>
@@ -77,16 +79,16 @@
   <span class="eyebrow">Start here</span>
   <h2>Ready to take the first step?</h2>
   <p class="lead">Book a free discovery call and leave with a clear picture of where AI can help your business most.</p>
-  <div class="actions"><a class="btn btn-primary" href="contact.html" style="background:var(--brass);border-color:var(--brass)">Book a discovery call <span class="arr">&rarr;</span></a></div>
+  <div class="actions"><a class="btn btn-primary" href="contact.html" style="background:var(--brass);border-color:var(--brass);color:var(--navy)">Book a discovery call <span class="arr">&rarr;</span></a></div>
 </div></section>
 </main>
 <footer>
   <div class="wrap">
     <div class="foot-top">
       <div><img src="assets/img/talus-logo-ivory.svg" alt="Talus"><p style="margin:16px 0 0;max-width:300px">AI training for business. Built to carry what's next.</p></div>
-      <ul class="foot-links"><li><a href="services.html">Services</a></li><li><a href="courses.html">Courses</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="#">LinkedIn</a></li></ul>
+      <ul class="foot-links"><li><a href="services.html">Services</a></li><li><a href="courses.html">Courses</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="terms.html">Terms</a></li></ul>
     </div>
-    <div class="foot-bottom"><span>&copy; <span id="year">2026</span> Talus. All rights reserved.</span><span>hello@talusconsulting.net</span></div>
+    <div class="foot-bottom"><span>&copy; <span id="year">2026</span> Talus. All rights reserved.</span><a href="mailto:hello@talusconsulting.net">hello@talusconsulting.net</a></div>
   </div>
 </footer>
 <script src="assets/js/site.js"></script>
