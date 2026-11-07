@@ -30,7 +30,7 @@ def page(fname, title, desc, body):
   <nav class="wrap nav" aria-label="Main">
     <a class="brand" href="index.html" aria-label="Talus home"><img src="assets/img/talus-logo-navy.svg" alt="Talus"></a>
     <button class="menu-btn" aria-label="Menu" aria-expanded="false"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
-    <ul class="nav-links">{links}<li><a class="btn btn-primary btn-small" href="contact.html" style="color:var(--ivory)">Book a call</a></li></ul>
+    <ul class="nav-links">{links}<li><a class="btn btn-primary btn-small" href="contact.html#book" style="color:var(--ivory)">Book a call</a></li></ul>
   </nav>
 </header>
 <main id="main">
@@ -54,7 +54,7 @@ CTA = '''<section class="dark cta-band"><div class="wrap reveal">
   <span class="eyebrow">Start here</span>
   <h2>Ready to take the first step?</h2>
   <p class="lead">Book a free discovery call and leave with a clear picture of where AI can help your business most.</p>
-  <div class="actions"><a class="btn btn-primary" href="contact.html" style="background:var(--brass);border-color:var(--brass);color:var(--navy)">Book a discovery call <span class="arr">&rarr;</span></a></div>
+  <div class="actions"><a class="btn btn-primary" href="contact.html#book" style="background:var(--brass);border-color:var(--brass);color:var(--navy)">Book a discovery call <span class="arr">&rarr;</span></a></div>
 </div></section>'''
 
 home = f'''
@@ -65,7 +65,7 @@ home = f'''
     <h1 class="reveal">Built to carry what's next.</h1>
     <p class="lead reveal">The talus is the ankle bone that carries the body's entire weight and keeps it moving forward. Talus does the same for your business, training your team to put AI to work with practical skills and real results instead of hype.</p>
     <div class="actions reveal">
-      <a class="btn btn-primary" href="contact.html">Book a discovery call <span class="arr">&rarr;</span></a>
+      <a class="btn btn-primary" href="contact.html#book">Book a discovery call <span class="arr">&rarr;</span></a>
       <a class="btn btn-ghost" href="courses.html">Explore courses</a>
     </div>
     <div class="ask reveal">
@@ -75,7 +75,7 @@ home = f'''
         <button class="btn btn-primary" type="submit">Show me <span class="arr">&rarr;</span></button>
       </form>
       <div class="chips"><button class="chip" type="button">Retail</button><button class="chip" type="button">Healthcare</button><button class="chip" type="button">Real estate</button><button class="chip" type="button">Law</button><button class="chip" type="button">Construction</button><button class="chip" type="button">Finance</button></div>
-      <div class="answer" id="ask-answer" aria-live="polite"><ol></ol><p class="note">Sample ideas from the Talus playbook, shown for illustration. Not a live AI model; real results depend on your business.</p><p class="cta">Want a plan built around your business? <a href="contact.html">Book a free discovery call &rarr;</a></p></div>
+      <div class="answer" id="ask-answer" aria-live="polite"><ol></ol><p class="note">Sample ideas from the Talus playbook, shown for illustration. Not a live AI model; real results depend on your business.</p><p class="cta">Want a plan built around your business? <a href="contact.html#book">Book a free discovery call &rarr;</a></p></div>
     </div>
   </div>
 </section>
@@ -166,7 +166,10 @@ contact = f'''
   <p class="lead reveal">Pick a time for a free 30-minute discovery call, or send a message and we'll reply within one business day.</p>
 </div></section>
 <section style="padding-top:10px"><div class="wrap"><div class="contact-grid">
-  <div class="booking reveal"><div><h3>Booking calendar</h3><p>Your Calendly scheduler appears here once it's connected.</p></div></div>
+  <div class="booking reveal" id="book">
+    <iframe src="https://calendly.com/james-talusconsulting/30min?embed_domain=talusconsulting.net&amp;embed_type=Inline&amp;hide_gdpr_banner=1&amp;background_color=ffffff&amp;text_color=14213d&amp;primary_color=b08d57" title="Book a 30-minute discovery call with Talus" loading="lazy"></iframe>
+    <p class="booking-alt">Calendar not loading? <a href="https://calendly.com/james-talusconsulting/30min" target="_blank" rel="noopener">Open the booking page &rarr;</a></p>
+  </div>
   <form class="contact reveal" id="contact-form" action="mailto:support@talusconsulting.net" method="post" enctype="text/plain">
     <label for="n">Name</label><input id="n" name="name" required>
     <label for="c">Company</label><input id="c" name="company">
