@@ -118,9 +118,9 @@ services = f'''
 </div></section>
 <section style="padding-top:20px"><div class="wrap">
   {svc("Discovery call", "A 30-minute conversation about your goals, your team and your current tools. You leave with two or three concrete ideas, whether or not we work together.", "Free")}
-  {svc("AI readiness assessment", "We review your workflows, data and skills, then deliver a prioritized roadmap of where AI will save time or create value first.", "From $X")}
-  {svc("Team workshops", "Half-day or full-day hands-on sessions, in person or remote, tailored to a department such as sales, operations, HR or leadership.", "From $X")}
-  {svc("Implementation coaching", "Ongoing support while your team puts AI into daily work: choosing tools, writing policies, building workflows and measuring results.", "$X / month")}
+  {svc("AI readiness assessment", "We review your workflows, data and skills, then deliver a prioritized roadmap of where AI will save time or create value first. The fee is credited toward any project booked within 60 days.", "$1,950")}
+  {svc("Team workshops", "Half-day or full-day hands-on sessions, live on Zoom, tailored to a department such as sales, operations, HR or leadership.", "From $1,500")}
+  {svc("Implementation coaching", "Ongoing support while your team puts AI into daily work: choosing tools, writing policies, building workflows and measuring results. Three-month minimum.", "$1,250 / month")}
 </div></section>
 {CTA}'''
 
@@ -134,13 +134,13 @@ courses = f'''
   <p class="lead reveal">Self-paced courses and live workshops that turn curiosity into everyday skill.</p>
 </div></section>
 <section style="padding-top:20px"><div class="wrap"><div class="grid-3">
-  {course("Self-paced &middot; ~2 hours", "AI Foundations for Business", "For anyone new to AI. What it can and can't do, and where it fits in your work.", "$X", "Enroll now")}
-  {course("Self-paced &middot; ~3 hours", "Prompting That Works", "For everyday users of ChatGPT, Claude or Copilot who want better results, faster.", "$X", "Enroll now")}
-  {course("Live &middot; Half day", "AI for Leaders", "For owners and executives setting AI strategy, budgets and expectations.", "$X", "Reserve a seat")}
-  {course("Live &middot; 2 hours", "Responsible AI &amp; Policy", "For leadership, HR and compliance teams writing the rules for safe AI use.", "$X", "Reserve a seat")}
-  {course("Live &middot; Full day", "Team Bootcamp", "A custom, hands-on day for a whole department, built around its real work.", "Quote", "Get a quote")}
+  {course("Self-paced &middot; ~2 hours", "AI Foundations for Business", "For anyone new to AI. What it can and can't do, and where it fits in your work.", "$149", "Enroll now")}
+  {course("Self-paced &middot; ~3 hours", "Prompting That Works", "For everyday users of ChatGPT, Claude or Copilot who want better results, faster.", "$199", "Enroll now")}
+  {course("Live on Zoom &middot; Half day", "AI for Leaders", "For owners and executives setting AI strategy, budgets and expectations. Private sessions for your leadership team (up to 12): $2,750.", "$395 / seat", "Reserve a seat")}
+  {course("Live on Zoom &middot; 2 hours", "Responsible AI &amp; Policy", "For leadership, HR and compliance teams writing the rules for safe AI use. Private team session: $1,500.", "$195 / seat", "Reserve a seat")}
+  {course("Live on Zoom &middot; Full day", "Team Bootcamp", "A custom, hands-on day for a whole department of up to 20 people, built around its real work.", "From $4,500", "Get a quote")}
 </div>
-<p class="fine reveal" style="margin-top:28px;font-size:14px;color:var(--slate)">Self-paced courses are digital and non-refundable. Live workshops are fully refundable up to 7 days before the start date. <a href="terms.html#refunds">Refund policy</a></p>
+<p class="fine reveal" style="margin-top:28px;font-size:14px;color:var(--slate)">Get both self-paced courses for $299, or $199 per person for teams of 5 or more. All live sessions run on Zoom with screen sharing. Self-paced courses are digital and non-refundable. Live workshops are fully refundable up to 7 days before the start date. <a href="terms.html#refunds">Refund policy</a></p>
 </div></section>
 {CTA}'''
 
