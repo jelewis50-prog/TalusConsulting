@@ -23,7 +23,7 @@
   <nav class="wrap nav" aria-label="Main">
     <a class="brand" href="index.html" aria-label="Talus home"><img src="assets/img/talus-logo-navy.svg" alt="Talus"></a>
     <button class="menu-btn" aria-label="Menu" aria-expanded="false"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
-    <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="courses.html">Courses</a></li><li><a href="about.html">About</a></li><li><a class="btn btn-primary btn-small" href="contact.html" style="color:var(--ivory)">Book a call</a></li></ul>
+    <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="courses.html">Courses</a></li><li><a href="about.html">About</a></li><li><a class="btn btn-primary btn-small" href="contact.html#book" style="color:var(--ivory)">Book a call</a></li></ul>
   </nav>
 </header>
 <main id="main">
@@ -34,7 +34,10 @@
   <p class="lead reveal">Pick a time for a free 30-minute discovery call, or send a message and we'll reply within one business day.</p>
 </div></section>
 <section style="padding-top:10px"><div class="wrap"><div class="contact-grid">
-  <div class="booking reveal"><div><h3>Booking calendar</h3><p>Your Calendly scheduler appears here once it's connected.</p></div></div>
+  <div class="booking reveal" id="book">
+    <iframe src="https://calendly.com/james-talusconsulting/30min?embed_domain=talusconsulting.net&amp;embed_type=Inline&amp;hide_gdpr_banner=1&amp;background_color=ffffff&amp;text_color=14213d&amp;primary_color=b08d57" title="Book a 30-minute discovery call with Talus" loading="lazy"></iframe>
+    <p class="booking-alt">Calendar not loading? <a href="https://calendly.com/james-talusconsulting/30min" target="_blank" rel="noopener">Open the booking page &rarr;</a></p>
+  </div>
   <form class="contact reveal" id="contact-form" action="mailto:support@talusconsulting.net" method="post" enctype="text/plain">
     <label for="n">Name</label><input id="n" name="name" required>
     <label for="c">Company</label><input id="c" name="company">
