@@ -42,7 +42,7 @@ def page(fname, title, desc, body):
       <div><img src="assets/img/talus-logo-ivory.svg" alt="Talus"><p style="margin:16px 0 0;max-width:300px">AI training for business. Built to carry what's next.</p></div>
       <ul class="foot-links"><li><a href="services.html">Services</a></li><li><a href="courses.html">Courses</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="terms.html">Terms</a></li></ul>
     </div>
-    <div class="foot-bottom"><span>&copy; <span id="year">2026</span> Talus. All rights reserved.</span><a href="mailto:hello@talusconsulting.net">hello@talusconsulting.net</a></div>
+    <div class="foot-bottom"><span>&copy; <span id="year">2026</span> Talus. All rights reserved.</span><a href="mailto:support@talusconsulting.net">support@talusconsulting.net</a></div>
   </div>
 </footer>
 <script src="assets/js/site.js"></script>
@@ -167,7 +167,7 @@ contact = f'''
 </div></section>
 <section style="padding-top:10px"><div class="wrap"><div class="contact-grid">
   <div class="booking reveal"><div><h3>Booking calendar</h3><p>Your Calendly scheduler appears here once it's connected.</p></div></div>
-  <form class="contact reveal" id="contact-form" action="mailto:hello@talusconsulting.net" method="post" enctype="text/plain">
+  <form class="contact reveal" id="contact-form" action="mailto:support@talusconsulting.net" method="post" enctype="text/plain">
     <label for="n">Name</label><input id="n" name="name" required>
     <label for="c">Company</label><input id="c" name="company">
     <label for="e">Email</label><input id="e" name="email" type="email" required>
@@ -190,7 +190,7 @@ def legal_page(title, updated, html):
 </div></section>"""
 
 privacy = legal_page("Privacy Policy", "November 7, 2026", """
-<p>This policy explains what information Talus (&ldquo;we&rdquo;, &ldquo;us&rdquo;) collects through talusconsulting.net and how we use it. If you have questions, email <a href="mailto:hello@talusconsulting.net">hello@talusconsulting.net</a>.</p>
+<p>This policy explains what information Talus (&ldquo;we&rdquo;, &ldquo;us&rdquo;) collects through talusconsulting.net and how we use it. If you have questions, email <a href="mailto:support@talusconsulting.net">support@talusconsulting.net</a>.</p>
 <h2>Information we collect</h2>
 <ul>
 <li><strong>Information you send us.</strong> When you email us or use the contact form, we receive your name, company, email address and anything you choose to write.</li>
@@ -207,7 +207,7 @@ privacy = legal_page("Privacy Policy", "November 7, 2026", """
 <h2>Security</h2>
 <p>We use reasonable safeguards, including encrypted connections and limited access to your information. No method of transmission or storage is completely secure. If a breach affects your personal information, we will notify you as required by law.</p>
 <h2>Your choices and rights</h2>
-<p>You can ask us to tell you what personal information we hold about you, correct it, or delete it, by emailing <a href="mailto:hello@talusconsulting.net">hello@talusconsulting.net</a>. You can unsubscribe from any marketing email at any time using the link in that email. We will respond within 45 days.</p>
+<p>You can ask us to tell you what personal information we hold about you, correct it, or delete it, by emailing <a href="mailto:support@talusconsulting.net">support@talusconsulting.net</a>. You can unsubscribe from any marketing email at any time using the link in that email. We will respond within 45 days.</p>
 <h2>Children</h2>
 <p>Our services are for businesses and are not directed to children under 13. We do not knowingly collect information from children.</p>
 <h2>Changes</h2>
@@ -236,7 +236,7 @@ terms = legal_page("Terms of Use", "November 7, 2026", """
 <h2>Governing law</h2>
 <p>These terms are governed by the laws of the State of Texas. Any dispute will be handled in the state or federal courts located in Brewster County, Texas.</p>
 <h2>Contact</h2>
-<p>Questions about these terms: <a href="mailto:hello@talusconsulting.net">hello@talusconsulting.net</a>.</p>
+<p>Questions about these terms: <a href="mailto:support@talusconsulting.net">support@talusconsulting.net</a>.</p>
 """)
 
 P = [
