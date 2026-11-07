@@ -139,7 +139,9 @@ courses = f'''
   {course("Live &middot; Half day", "AI for Leaders", "For owners and executives setting AI strategy, budgets and expectations.", "$X", "Reserve a seat")}
   {course("Live &middot; 2 hours", "Responsible AI &amp; Policy", "For leadership, HR and compliance teams writing the rules for safe AI use.", "$X", "Reserve a seat")}
   {course("Live &middot; Full day", "Team Bootcamp", "A custom, hands-on day for a whole department, built around its real work.", "Quote", "Get a quote")}
-</div></div></section>
+</div>
+<p class="fine reveal" style="margin-top:28px;font-size:14px;color:var(--slate)">Self-paced courses are digital and non-refundable. Live workshops are fully refundable up to 7 days before the start date. <a href="terms.html#refunds">Refund policy</a></p>
+</div></section>
 {CTA}'''
 
 about = f'''
@@ -217,7 +219,14 @@ terms = legal_page("Terms of Use", "November 7, 2026", """
 <h2>Information on this site</h2>
 <p>Content on this site, including the &ldquo;Ask Talus&rdquo; sample ideas, is general information for educational purposes. It is not legal, financial, tax or other professional advice, and it is not a promise of any particular result. AI tools can produce inaccurate output, so review any AI-generated work before relying on it.</p>
 <h2>Courses and workshops</h2>
-<p>Prices, schedules and what is included are described at the time of purchase. [Refund policy: for example, full refund up to 7 days before a live workshop, or within 14 days of purchase for self-paced courses if less than 25% is completed.]</p>
+<p>Prices, schedules and what is included are described at the time of purchase. </p>
+<h3 id="refunds">Refunds</h3>
+<ul>
+<li><strong>Self-paced courses</strong> give you immediate access to digital content, so all sales are final and they are not refundable. Please review the course description before you buy.</li>
+<li><strong>Live workshops</strong> can be cancelled for a full refund up to 7 days before the start date. Within 7 days, we can move your seat to a later session instead. If Talus cancels or reschedules a workshop, you may choose a full refund.</li>
+<li><strong>Consulting and custom bootcamps</strong> follow the payment and cancellation terms in your written agreement.</li>
+</ul>
+<p>Nothing in these terms limits any rights you have under applicable law.</p>
 <h2>Intellectual property</h2>
 <p>The Talus name, logo, website design, course materials and content are owned by Talus and may not be copied, resold or redistributed without written permission. Course purchases give you a personal, non-transferable license for your own or your team&rsquo;s internal use, as stated at purchase.</p>
 <h2>Acceptable use</h2>
@@ -225,7 +234,7 @@ terms = legal_page("Terms of Use", "November 7, 2026", """
 <h2>Disclaimer and limitation of liability</h2>
 <p>The site is provided &ldquo;as is&rdquo; without warranties of any kind. To the fullest extent permitted by law, Talus is not liable for indirect, incidental or consequential damages arising from your use of the site, and our total liability for any claim related to the site will not exceed $100.</p>
 <h2>Governing law</h2>
-<p>These terms are governed by the laws of the State of Texas. Any dispute will be handled in the state or federal courts located in [County] County, Texas.</p>
+<p>These terms are governed by the laws of the State of Texas. Any dispute will be handled in the state or federal courts located in Brewster County, Texas.</p>
 <h2>Contact</h2>
 <p>Questions about these terms: <a href="mailto:hello@talusconsulting.net">hello@talusconsulting.net</a>.</p>
 """)
