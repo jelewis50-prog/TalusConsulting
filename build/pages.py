@@ -29,7 +29,7 @@ def page(fname, title, desc, body):
 <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="assets/img/favicon-180.png">
 <link rel="stylesheet" href="assets/css/fonts.css">
-<link rel="stylesheet" href="assets/css/site.css?v=4">
+<link rel="stylesheet" href="assets/css/site.css?v=5">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -129,7 +129,7 @@ services = f'''
   {svc("Discovery call", "A 30-minute conversation about your goals, your team and your current tools. You leave with two or three concrete ideas, whether or not we work together.", "Free")}
   {svc("AI readiness assessment", "We review your workflows, data and skills, then deliver a prioritized roadmap of where AI will save time or create value first. The fee is credited toward any project booked within 60 days.", "$1,950")}
   {svc("Team workshops", "Half-day or full-day hands-on sessions, live on Zoom, tailored to a department such as sales, operations, HR or leadership.", "From $1,500")}
-  {svc("Implementation coaching", "Ongoing support while your team puts AI into daily work: choosing tools, writing policies, building workflows and measuring results. Three-month minimum.", "$1,250 / month")}
+  {svc("Implementation coaching", "Ongoing support while your team puts AI into daily work: choosing tools, writing policies, building workflows and measuring results. Billed monthly with a three-month minimum. Your written agreement states the renewal and cancellation terms before anything is charged.", "$1,250 / month")}
 </div></section>
 {CTA}'''
 
@@ -142,13 +142,13 @@ courses = f'''
   <p class="lead reveal">Self-paced courses and live workshops that turn curiosity into everyday skill.</p>
 </div></section>
 <section class="tight-top"><div class="wrap"><div class="grid-3">
-  <div class="course course-feature reveal"><span class="meta">Self-paced &middot; ~2 hours &middot; 17 lessons</span><h3>AI Foundations for Business</h3><p>For anyone new to AI. What it can and can't do, and where it fits in your work.</p>{MODLIST}<div class="foot"><strong>$149</strong><a class="btn btn-primary btn-small" href="https://learn.talusconsulting.net/enroll/3934740?price_id=4909964">Enroll now</a></div></div>
+  <div class="course course-feature reveal"><span class="meta">Self-paced &middot; ~2 hours &middot; 17 lessons</span><h3>AI Foundations for Business</h3><p>For anyone new to AI. What it can and can't do, and where it fits in your work.</p>{MODLIST}<div class="foot"><strong>$149 <span class="once">one-time</span></strong><a class="btn btn-primary btn-small" href="https://learn.talusconsulting.net/enroll/3934740?price_id=4909964">Enroll now</a></div></div>
   {course("Self-paced &middot; Coming soon", "Prompting That Works", "For everyday users of ChatGPT, Claude or Copilot who want better results, faster.", "$199", "Join the waitlist", "mailto:support@talusconsulting.net?subject=Prompting%20That%20Works%20waitlist")}
   {course("Live on Zoom &middot; Half day", "AI for Leaders", "For owners and executives setting AI strategy, budgets and expectations. Private sessions for your leadership team (up to 12): $2,750.", "$395 / seat", "Reserve a seat")}
   {course("Live on Zoom &middot; 2 hours", "Responsible AI &amp; Policy", "For leadership, HR and compliance teams writing the rules for safe AI use. Private team session: $1,500.", "$195 / seat", "Reserve a seat")}
   {course("Live on Zoom &middot; Full day", "Team Bootcamp", "A custom, hands-on day for a whole department of up to 20 people, built around its real work.", "From $4,500", "Get a quote")}
 </div>
-<p class="fine reveal">When Prompting That Works launches, get both self-paced courses for $299, or $199 per person for teams of 5 or more. All live sessions run on Zoom with screen sharing. Self-paced courses are digital and non-refundable. Live workshops are fully refundable up to 7 days before the start date. <a href="terms.html#refunds">Refund policy</a></p>
+<p class="fine reveal">Every course and workshop is a one-time payment. Nothing renews automatically. For adults 18 and older. When Prompting That Works launches, get both self-paced courses for $299, or $199 per person for teams of 5 or more. All live sessions run on Zoom with screen sharing. Self-paced courses are digital and non-refundable. Live workshops are fully refundable up to 7 days before the start date. <a href="terms.html#refunds">Refund policy</a></p>
 </div></section>
 {CTA}'''
 
@@ -219,17 +219,18 @@ privacy = legal_page("Privacy Policy", "November 8, 2026", """
 <h2>Your choices and rights</h2>
 <p>You can ask us to tell you what personal information we hold about you, correct it, or delete it, by emailing <a href="mailto:support@talusconsulting.net">support@talusconsulting.net</a>. You can unsubscribe from any marketing email at any time using the link in that email. We will respond within 45 days.</p>
 <h2>Children</h2>
-<p>Our services are for businesses and are not directed to children under 13. We do not knowingly collect information from children.</p>
+<p>Our services are for businesses and adults. You must be 18 or older to buy or enroll in a course or workshop. We do not knowingly collect information from children under 13. If we learn that we have, we will delete it. If you believe a child has given us information, email <a href="mailto:support@talusconsulting.net">support@talusconsulting.net</a>.</p>
 <h2>Changes</h2>
 <p>We may update this policy. The date at the top shows when it last changed.</p>
 """)
 
-terms = legal_page("Terms of Use", "November 7, 2026", """
+terms = legal_page("Terms of Use", "November 8, 2026", """
 <p>These terms apply to your use of talusconsulting.net. By using the site you agree to them. Separate written agreements govern paid consulting, workshops and courses.</p>
 <h2>Information on this site</h2>
 <p>Content on this site, including the &ldquo;Ask Talus&rdquo; sample ideas, is general information for educational purposes. It is not legal, financial, tax or other professional advice, and it is not a promise of any particular result. AI tools can produce inaccurate output, so review any AI-generated work before relying on it.</p>
 <h2>Courses and workshops</h2>
-<p>Prices, schedules and what is included are described at the time of purchase. </p>
+<p>You must be 18 or older to buy or enroll in a course or workshop. Prices, schedules and what is included are described at the time of purchase.</p>
+<p>Courses and workshops are one-time purchases. There are no subscriptions, and nothing renews or charges your card again automatically. Ongoing services such as implementation coaching are billed only under a written agreement that states the price, billing period, minimum term and how to cancel before you are charged.</p>
 <h3 id="refunds">Refunds</h3>
 <ul>
 <li><strong>Self-paced courses</strong> give you immediate access to digital content, so all sales are final and they are not refundable. Please review the course description before you buy.</li>
@@ -239,6 +240,8 @@ terms = legal_page("Terms of Use", "November 7, 2026", """
 <p>Nothing in these terms limits any rights you have under applicable law.</p>
 <h2>Intellectual property</h2>
 <p>The Talus name, logo, website design, course materials and content are owned by Talus and may not be copied, resold or redistributed without written permission. Course purchases give you a personal, non-transferable license for your own or your team&rsquo;s internal use, as stated at purchase.</p>
+<h2>Copyright complaints</h2>
+<p>If you believe content on this site or in a Talus course infringes your copyright, email <a href="mailto:support@talusconsulting.net">support@talusconsulting.net</a> with the work you believe was copied, where it appears, your contact details, and a statement that you have a good-faith belief the use is not authorized. We will review it and remove infringing material promptly.</p>
 <h2>Acceptable use</h2>
 <p>Do not misuse the site, attempt to access it without authorization, or use it to send spam or harmful content.</p>
 <h2>Disclaimer and limitation of liability</h2>
