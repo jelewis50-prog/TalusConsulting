@@ -124,8 +124,8 @@ services = f'''
 </div></section>
 {CTA}'''
 
-def course(meta, name, who, price, action):
-    return f'<div class="course reveal"><span class="meta">{meta}</span><h3>{name}</h3><p>{who}</p><div class="foot"><strong>{price}</strong><a class="btn btn-ghost btn-small" href="contact.html">{action}</a></div></div>'
+def course(meta, name, who, price, action, href="contact.html"):
+    return f'<div class="course reveal"><span class="meta">{meta}</span><h3>{name}</h3><p>{who}</p><div class="foot"><strong>{price}</strong><a class="btn btn-ghost btn-small" href="{href}">{action}</a></div></div>'
 
 courses = f'''
 <section class="page-hero">{STRATA}<div class="wrap">
@@ -134,7 +134,7 @@ courses = f'''
   <p class="lead reveal">Self-paced courses and live workshops that turn curiosity into everyday skill.</p>
 </div></section>
 <section style="padding-top:20px"><div class="wrap"><div class="grid-3">
-  {course("Self-paced &middot; ~2 hours", "AI Foundations for Business", "For anyone new to AI. What it can and can't do, and where it fits in your work.", "$149", "Enroll now")}
+  {course("Self-paced &middot; ~2 hours", "AI Foundations for Business", "For anyone new to AI. What it can and can't do, and where it fits in your work.", "$149", "Enroll now", "https://learn.talusconsulting.net/courses/ai-foundations-for-business")}
   {course("Self-paced &middot; ~3 hours", "Prompting That Works", "For everyday users of ChatGPT, Claude or Copilot who want better results, faster.", "$199", "Enroll now")}
   {course("Live on Zoom &middot; Half day", "AI for Leaders", "For owners and executives setting AI strategy, budgets and expectations. Private sessions for your leadership team (up to 12): $2,750.", "$395 / seat", "Reserve a seat")}
   {course("Live on Zoom &middot; 2 hours", "Responsible AI &amp; Policy", "For leadership, HR and compliance teams writing the rules for safe AI use. Private team session: $1,500.", "$195 / seat", "Reserve a seat")}
@@ -192,17 +192,18 @@ def legal_page(title, updated, html):
 {html}
 </div></section>"""
 
-privacy = legal_page("Privacy Policy", "November 7, 2026", """
+privacy = legal_page("Privacy Policy", "November 8, 2026", """
 <p>This policy explains what information Talus (&ldquo;we&rdquo;, &ldquo;us&rdquo;) collects through talusconsulting.net and how we use it. If you have questions, email <a href="mailto:support@talusconsulting.net">support@talusconsulting.net</a>.</p>
 <h2>Information we collect</h2>
 <ul>
 <li><strong>Information you send us.</strong> When you email us or use the contact form, we receive your name, company, email address and anything you choose to write.</li>
 <li><strong>Bookings.</strong> If you book a call through our scheduling tool, the scheduling provider collects your name, email and chosen time and shares them with us.</li>
-<li><strong>Payments.</strong> Course and workshop payments are processed by our payment provider. We do not receive or store your full card number.</li>
+<li><strong>Payments.</strong> Course and workshop payments are processed by our payment providers (Stripe, and Thinkific for online courses). We do not receive or store your full card number.</li>
+<li><strong>Online courses.</strong> When you enroll in a self-paced course, our course platform (Thinkific) creates an account with your name and email and records your course progress.</li>
 <li><strong>Technical data.</strong> Our website host and domain provider may automatically log basic technical data, such as your IP address and browser type, for security and reliability. We do not use advertising cookies, analytics trackers or third-party fonts.</li>
 </ul>
 <h2>How we use it</h2>
-<p>We use your information to reply to you, schedule and deliver our services, process payments, keep records required by law, and protect our website. We do not sell your personal information, and we do not share it for advertising.</p>
+<p>We use your information to reply to you, schedule and deliver our services, process payments, keep records required by law, and protect our website. If you opt in when you sign up or buy, we also send occasional emails about new courses, workshops and offers. You can unsubscribe at any time. We do not sell your personal information, and we do not share it for advertising.</p>
 <h2>Who we share it with</h2>
 <p>We share information only with service providers that help us run the business (for example our email, scheduling, payment and website hosting providers), when required by law, or to protect our rights. These providers may only use it to provide their services to us.</p>
 <h2>How long we keep it</h2>
