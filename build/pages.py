@@ -18,6 +18,13 @@ def page(fname, title, desc, body):
 <meta property="og:url" content="https://talusconsulting.net/{"" if fname=="index.html" else fname}">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{desc}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Talus">
+<meta property="og:image" content="https://talusconsulting.net/assets/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Talus. Built to carry what's next.">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="assets/img/favicon-180.png">
@@ -136,12 +143,12 @@ courses = f'''
 </div></section>
 <section class="tight-top"><div class="wrap"><div class="grid-3">
   <div class="course course-feature reveal"><span class="meta">Self-paced &middot; ~2 hours &middot; 17 lessons</span><h3>AI Foundations for Business</h3><p>For anyone new to AI. What it can and can't do, and where it fits in your work.</p>{MODLIST}<div class="foot"><strong>$149</strong><a class="btn btn-primary btn-small" href="https://learn.talusconsulting.net/enroll/3934740?price_id=4909964">Enroll now</a></div></div>
-  {course("Self-paced &middot; ~3 hours", "Prompting That Works", "For everyday users of ChatGPT, Claude or Copilot who want better results, faster.", "$199", "Enroll now")}
+  {course("Self-paced &middot; Coming soon", "Prompting That Works", "For everyday users of ChatGPT, Claude or Copilot who want better results, faster.", "$199", "Join the waitlist", "mailto:support@talusconsulting.net?subject=Prompting%20That%20Works%20waitlist")}
   {course("Live on Zoom &middot; Half day", "AI for Leaders", "For owners and executives setting AI strategy, budgets and expectations. Private sessions for your leadership team (up to 12): $2,750.", "$395 / seat", "Reserve a seat")}
   {course("Live on Zoom &middot; 2 hours", "Responsible AI &amp; Policy", "For leadership, HR and compliance teams writing the rules for safe AI use. Private team session: $1,500.", "$195 / seat", "Reserve a seat")}
   {course("Live on Zoom &middot; Full day", "Team Bootcamp", "A custom, hands-on day for a whole department of up to 20 people, built around its real work.", "From $4,500", "Get a quote")}
 </div>
-<p class="fine reveal">Get both self-paced courses for $299, or $199 per person for teams of 5 or more. All live sessions run on Zoom with screen sharing. Self-paced courses are digital and non-refundable. Live workshops are fully refundable up to 7 days before the start date. <a href="terms.html#refunds">Refund policy</a></p>
+<p class="fine reveal">When Prompting That Works launches, get both self-paced courses for $299, or $199 per person for teams of 5 or more. All live sessions run on Zoom with screen sharing. Self-paced courses are digital and non-refundable. Live workshops are fully refundable up to 7 days before the start date. <a href="terms.html#refunds">Refund policy</a></p>
 </div></section>
 {CTA}'''
 
@@ -253,4 +260,20 @@ P = [
 ]
 for f, t, d, b in P:
     open(f'{OUT}/{f}', 'w').write(page(f, t, d, b))
+
+# 404: GitHub Pages serves it at any missing path, so resolve links from the site root
+notfound = page('404.html', 'Page not found · Talus', 'This page does not exist.', f'''
+<section class="page-hero">{STRATA}<div class="wrap">
+  <h1 class="reveal">This page doesn&rsquo;t exist.</h1>
+  <p class="lead reveal">The link may be old or mistyped. Try the home page, or browse our courses.</p>
+  <div class="actions reveal"><a class="btn btn-primary" href="index.html">Go to the home page</a> <a class="btn btn-ghost" href="courses.html">See courses</a></div>
+</div></section>''')
+notfound = notfound.replace('<meta charset="utf-8">', '<meta charset="utf-8">\n<base href="/">\n<meta name="robots" content="noindex">', 1)
+notfound = notfound.replace('<link rel="canonical" href="https://talusconsulting.net/404.html">\n', '')
+open(f'{OUT}/404.html', 'w').write(notfound)
+
+# sitemap and robots
+urls = ''.join(f'  <url><loc>https://talusconsulting.net/{"" if f == "index.html" else f}</loc></url>\n' for f, *_ in P)
+open(f'{OUT}/sitemap.xml', 'w').write(f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{urls}</urlset>\n')
+open(f'{OUT}/robots.txt', 'w').write('User-agent: *\nAllow: /\n\nSitemap: https://talusconsulting.net/sitemap.xml\n')
 print('ok')
