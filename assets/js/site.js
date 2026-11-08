@@ -34,16 +34,6 @@
         r: Math.random() * 1.6 + 1, b: Math.random() < .28
       }));
     }
-    // Faint strata lines on the right, echoing the logo
-    function strata() {
-      const right = W - Math.max(24, W * .06), top = H * .2, gap = Math.min(34, H * .055);
-      const lens = [.12, .13, .14, .2, .27, .34].map(f => f * Math.min(W, 1100));
-      ctx.lineCap = 'round'; ctx.lineWidth = Math.max(6, gap * .32);
-      lens.forEach((l, i) => {
-        ctx.strokeStyle = `rgba(${NAVY},.06)`;
-        ctx.beginPath(); ctx.moveTo(right, top + i * gap); ctx.lineTo(right - l, top + i * gap); ctx.stroke();
-      });
-    }
     let t = 0;
     function frame() {
       t++;
@@ -98,6 +88,7 @@
     const esc = t => t.replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
     const generic = raw => { const x = esc(raw.slice(0, 60)); return [`<b>A knowledge assistant</b> that answers your team's questions about ${x} processes instantly.`, `<b>Automated first drafts</b> of the emails, proposals and reports your ${x} team writes every week.`, `<b>Data-driven insights</b> that surface trends in your ${x} numbers before you'd spot them.`]; };
     const input = document.getElementById('ask-input'), out = document.getElementById('ask-answer');
+    const askBtn = document.getElementById('ask-btn'), chips = document.querySelectorAll('.chip');
     const list = out.querySelector('ol'), cta = out.querySelector('.cta');
     let busy = false;
     function pick(q) {
@@ -116,16 +107,42 @@
       }
       li.innerHTML = html;
     }
-    async function run(q) {
+    const wait = ms => new Promise(r => setTimeout(r, ms));
+    async function run(q, chip) {
       if (busy || !q.trim()) return; busy = true;
-      out.classList.add('show'); cta.classList.remove('show'); list.innerHTML = '';
+      chips.forEach(c => c.setAttribute('aria-pressed', c === chip));
+      if (askBtn) { askBtn.disabled = true; askBtn.setAttribute('aria-busy', 'true'); }
+      out.classList.add('show'); cta.classList.remove('show');
+      // Loading state: a short "thinking" row before the ideas type out
+      list.innerHTML = '<li class="thinking" aria-label="Finding ideas"><span class="dots"><i></i><i></i><i></i></span>Finding ideas for your business&hellip;</li>';
+      if (!reduce) await wait(650);
+      list.innerHTML = '';
       const ideas = pick(q);
       for (const idea of ideas) { const li = document.createElement('li'); list.appendChild(li); await type(li, idea); }
       cta.classList.add('show'); busy = false;
+      if (askBtn) { askBtn.disabled = false; askBtn.removeAttribute('aria-busy'); }
     }
     ask.addEventListener('submit', e => { e.preventDefault(); run(input.value); });
-    document.querySelectorAll('.chip').forEach(c => c.addEventListener('click', () => { input.value = c.textContent; run(c.textContent); }));
+    chips.forEach(c => { c.setAttribute('aria-pressed', 'false'); c.addEventListener('click', () => { input.value = c.textContent; run(c.textContent, c); }); });
   }
+
+  // Calendly embed: show a loading state until the calendar arrives, and point to the fallback link if it's slow
+  const booking = document.querySelector('.booking');
+  if (booking) {
+    const frame = booking.querySelector('iframe');
+    const done = () => booking.classList.add('loaded');
+    if (frame) frame.addEventListener('load', done);
+    setTimeout(() => { if (!booking.classList.contains('loaded')) booking.classList.add('slow'); }, 10000);
+  }
+
+  // Contact form: confirm the click did something (it hands off to the visitor's email app)
+  const form = document.getElementById('contact-form');
+  if (form) form.addEventListener('submit', () => {
+    const b = form.querySelector('button[type=submit]'); if (!b) return;
+    const html = b.innerHTML;
+    b.innerHTML = '<span class="check" aria-hidden="true"></span> Opening your email app';
+    setTimeout(() => { b.innerHTML = html; }, 4000);
+  });
 
   const y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
 })();
