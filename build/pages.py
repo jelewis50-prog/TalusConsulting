@@ -134,7 +134,7 @@ courses = f'''
   <p class="lead reveal">Self-paced courses and live workshops that turn curiosity into everyday skill.</p>
 </div></section>
 <section style="padding-top:20px"><div class="wrap"><div class="grid-3">
-  {course("Self-paced &middot; ~2 hours", "AI Foundations for Business", "For anyone new to AI. What it can and can't do, and where it fits in your work.", "$149", "Enroll now", "https://learn.talusconsulting.net/courses/ai-foundations-for-business")}
+  {course("Self-paced &middot; ~2 hours", "AI Foundations for Business", "For anyone new to AI. What it can and can't do, and where it fits in your work.", "$149", "Enroll now", "https://learn.talusconsulting.net/enroll/3934740?price_id=4909964")}
   {course("Self-paced &middot; ~3 hours", "Prompting That Works", "For everyday users of ChatGPT, Claude or Copilot who want better results, faster.", "$199", "Enroll now")}
   {course("Live on Zoom &middot; Half day", "AI for Leaders", "For owners and executives setting AI strategy, budgets and expectations. Private sessions for your leadership team (up to 12): $2,750.", "$395 / seat", "Reserve a seat")}
   {course("Live on Zoom &middot; 2 hours", "Responsible AI &amp; Policy", "For leadership, HR and compliance teams writing the rules for safe AI use. Private team session: $1,500.", "$195 / seat", "Reserve a seat")}
