@@ -137,6 +137,7 @@ section{padding:110px 0}
 .course p{color:var(--slate);font-size:15.5px;flex:1}
 .course .foot{display:flex;justify-content:space-between;align-items:center;margin-top:18px;padding-top:18px;border-top:1px solid var(--line)}
 .course .foot strong{font:600 28px/1 var(--display)}
+.course .foot .once{font:500 11px var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--slate);margin-left:6px;vertical-align:middle}
 .course-feature{grid-column:span 2;border-color:var(--brass)}
 .course-feature h3{font-size:34px}
 .modules{list-style:none;margin:6px 0 0;padding:0;flex:1;counter-reset:m}
