@@ -239,3 +239,4 @@ footer a{color:inherit}
 .legal ul{padding-left:20px}
 .legal li{margin-bottom:10px}
 .legal a{color:var(--navy)}
+.headshot{display:block;width:160px;height:160px;border-radius:50%;object-fit:cover;margin-bottom:24px;border:1px solid var(--brass,#B08D57);padding:4px;background:transparent}
