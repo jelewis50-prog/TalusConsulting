@@ -22,7 +22,7 @@ def page(fname, title, desc, body):
 <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="assets/img/favicon-180.png">
 <link rel="stylesheet" href="assets/css/fonts.css">
-<link rel="stylesheet" href="assets/css/site.css?v=2">
+<link rel="stylesheet" href="assets/css/site.css?v=3">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -30,7 +30,7 @@ def page(fname, title, desc, body):
   <nav class="wrap nav" aria-label="Main">
     <a class="brand" href="index.html" aria-label="Talus home"><img src="assets/img/talus-logo-navy.svg" alt="Talus"></a>
     <button class="menu-btn" aria-label="Menu" aria-expanded="false"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
-    <ul class="nav-links">{links}<li><a class="btn btn-primary btn-small" href="contact.html#book" style="color:var(--ivory)">Book a call</a></li></ul>
+    <ul class="nav-links">{links}<li><a class="btn btn-primary btn-small" href="contact.html#book">Book a call</a></li></ul>
   </nav>
 </header>
 <main id="main">
@@ -39,23 +39,26 @@ def page(fname, title, desc, body):
 <footer>
   <div class="wrap">
     <div class="foot-top">
-      <div><img src="assets/img/talus-logo-ivory.svg" alt="Talus"><p style="margin:16px 0 0;max-width:300px">AI training for business. Built to carry what's next.</p></div>
+      <div><img src="assets/img/talus-logo-ivory.svg" alt="Talus"><p>AI training for business. Built to carry what's next.</p></div>
       <ul class="foot-links"><li><a href="services.html">Services</a></li><li><a href="courses.html">Courses</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="terms.html">Terms</a></li></ul>
     </div>
     <div class="foot-bottom"><span>&copy; <span id="year">2026</span> Talus. All rights reserved.</span><a href="mailto:support@talusconsulting.net">support@talusconsulting.net</a></div>
   </div>
 </footer>
-<script src="assets/js/site.js?v=2"></script>
+<script src="assets/js/site.js?v=3"></script>
 </body>
 </html>
 '''
 
 CTA = '''<section class="dark cta-band"><div class="wrap reveal">
-  <span class="eyebrow">Start here</span>
-  <h2>Ready to take the first step?</h2>
+  <h2>Find where AI saves your team time.</h2>
   <p class="lead">Book a free discovery call and leave with a clear picture of where AI can help your business most.</p>
-  <div class="actions"><a class="btn btn-primary" href="contact.html#book" style="background:var(--brass);border-color:var(--brass);color:var(--navy)">Book a discovery call <span class="arr">&rarr;</span></a></div>
+  <div class="actions"><a class="btn btn-brass btn-lg" href="contact.html#book">Book a free discovery call <span class="arr">&rarr;</span></a></div>
 </div></section>'''
+
+MODULES = [("What AI is (and isn't)", "3 lessons + quiz"), ("Getting started with an AI assistant", "3 lessons"), ("AI in everyday business work", "4 lessons"), ("Using AI safely", "3 lessons"), ("Your first AI plan", "2 lessons + final quiz")]
+MODLIST = '<ol class="modules">' + ''.join(f'<li>{m}<span>{l}</span></li>' for m, l in MODULES) + '</ol>'
+FEATURE = f'''<div class="course course-feature reveal"><span class="meta">Self-paced &middot; ~2 hours &middot; 17 lessons</span><h3>AI Foundations for Business</h3><p>For anyone new to AI. What it can and can't do, and where it fits in your work.</p>{MODLIST}<div class="foot"><strong>$149</strong><a class="btn btn-ghost btn-small" href="courses.html">View course</a></div></div>'''
 
 home = f'''
 <section class="hero">
@@ -65,14 +68,14 @@ home = f'''
     <h1 class="reveal">Built to carry what's next.</h1>
     <p class="lead reveal">The talus is the ankle bone that carries the body's entire weight and keeps it moving forward. Talus does the same for your business, training your team to put AI to work with practical skills and real results instead of hype.</p>
     <div class="actions reveal">
-      <a class="btn btn-primary" href="contact.html#book">Book a discovery call <span class="arr">&rarr;</span></a>
+      <a class="btn btn-primary btn-lg" href="contact.html#book">Book a free discovery call <span class="arr">&rarr;</span></a>
       <a class="btn btn-ghost" href="courses.html">Explore courses</a>
     </div>
     <div class="ask reveal">
-      <label for="ask-input"><span class="dot"></span>Ask Talus &middot; What could AI do for my business?</label>
+      <label for="ask-input">Ask Talus &middot; What could AI do for my business?</label>
       <form id="ask-form" autocomplete="off">
         <input id="ask-input" placeholder="Type your industry, e.g. dental clinic" aria-label="Your industry">
-        <button class="btn btn-primary" type="submit">Show me <span class="arr">&rarr;</span></button>
+        <button class="btn btn-primary" type="submit" id="ask-btn">Show me <span class="arr">&rarr;</span></button>
       </form>
       <div class="chips"><button class="chip" type="button">Retail</button><button class="chip" type="button">Healthcare</button><button class="chip" type="button">Real estate</button><button class="chip" type="button">Law</button><button class="chip" type="button">Construction</button><button class="chip" type="button">Finance</button></div>
       <div class="answer" id="ask-answer" aria-live="polite"><ol></ol><p class="note">Sample ideas from the Talus playbook, shown for illustration. Not a live AI model; real results depend on your business.</p><p class="cta">Want a plan built around your business? <a href="contact.html#book">Book a free discovery call &rarr;</a></p></div>
@@ -81,16 +84,16 @@ home = f'''
 </section>
 
 <section class="white"><div class="wrap">
-  <div class="section-head reveal"><span class="eyebrow">Why Talus</span><h2>Practical AI, taught by people who use it.</h2></div>
+  <div class="section-head reveal"><h2>Practical AI, taught by people who use it.</h2></div>
   <div class="grid-3">
-    <div class="card reveal"><span class="num">01</span><h3>Practical, not theoretical</h3><p>Every session ends with something your team can use on Monday.</p></div>
-    <div class="card reveal"><span class="num">02</span><h3>Built for your business</h3><p>We start from your workflows, tools and goals, not a generic syllabus.</p></div>
-    <div class="card reveal"><span class="num">03</span><h3>Responsible by default</h3><p>Data privacy, accuracy and governance are part of every program.</p></div>
+    <div class="card reveal"><h3>Practical, not theoretical</h3><p>Every session ends with something your team can use on Monday.</p></div>
+    <div class="card reveal"><h3>Built for your business</h3><p>We start from your workflows, tools and goals, not a generic syllabus.</p></div>
+    <div class="card reveal"><h3>Responsible by default</h3><p>Data privacy, accuracy and governance are part of every program.</p></div>
   </div>
 </div></section>
 
 <section class="dark"><div class="wrap">
-  <div class="section-head reveal"><span class="eyebrow">How it works</span><h2>Four steps to move forward with confidence.</h2></div>
+  <div class="section-head reveal"><span class="eyebrow">How it works</span><h2>From a free call to AI your team uses every day.</h2></div>
   <div class="steps">
     <div class="step"><span class="n">01</span><div><h3>Discover</h3><p>A free 30-minute call to understand your goals and where AI fits.</p></div></div>
     <div class="step"><span class="n">02</span><div><h3>Assess</h3><p>We map your processes and find the highest-value opportunities.</p></div></div>
@@ -101,8 +104,8 @@ home = f'''
 
 <section><div class="wrap">
   <div class="split">
-    <div class="reveal"><span class="eyebrow">Courses</span><h2>Learn AI the practical way.</h2><p class="lead">Self-paced courses and live workshops that turn curiosity into everyday skill.</p><div class="actions" style="margin-top:28px"><a class="btn btn-ghost" href="courses.html">See all courses <span class="arr">&rarr;</span></a></div></div>
-    <div class="reveal"><p class="quote">&ldquo;The talus carries the body's full weight with every step. We help your business carry what comes next.&rdquo;</p></div>
+    <div class="reveal"><span class="eyebrow">Courses</span><h2>Start with a two-hour course.</h2><p class="lead">AI Foundations for Business covers what AI can do, how to prompt it, where it fits in daily work and how to use it safely. Live Zoom workshops go deeper.</p><div class="actions" style="margin-top:28px"><a class="btn btn-ghost" href="courses.html">See all courses</a></div></div>
+    {FEATURE}
   </div>
 </div></section>
 {CTA}'''
@@ -112,11 +115,10 @@ def svc(name, text, price):
 
 services = f'''
 <section class="page-hero">{STRATA}<div class="wrap">
-  <span class="eyebrow reveal">Services</span>
   <h1 class="reveal">AI adoption, from first question to full rollout.</h1>
   <p class="lead reveal">Whether you're just curious or ready to scale, Talus meets your team where it is.</p>
 </div></section>
-<section style="padding-top:20px"><div class="wrap">
+<section class="tight-top"><div class="wrap">
   {svc("Discovery call", "A 30-minute conversation about your goals, your team and your current tools. You leave with two or three concrete ideas, whether or not we work together.", "Free")}
   {svc("AI readiness assessment", "We review your workflows, data and skills, then deliver a prioritized roadmap of where AI will save time or create value first. The fee is credited toward any project booked within 60 days.", "$1,950")}
   {svc("Team workshops", "Half-day or full-day hands-on sessions, live on Zoom, tailored to a department such as sales, operations, HR or leadership.", "From $1,500")}
@@ -129,29 +131,27 @@ def course(meta, name, who, price, action):
 
 courses = f'''
 <section class="page-hero">{STRATA}<div class="wrap">
-  <span class="eyebrow reveal">Courses &amp; workshops</span>
-  <h1 class="reveal">Learn AI the practical way.</h1>
+  <h1 class="reveal">Courses and live workshops, from $149.</h1>
   <p class="lead reveal">Self-paced courses and live workshops that turn curiosity into everyday skill.</p>
 </div></section>
-<section style="padding-top:20px"><div class="wrap"><div class="grid-3">
-  {course("Self-paced &middot; ~2 hours", "AI Foundations for Business", "For anyone new to AI. What it can and can't do, and where it fits in your work.", "$149", "Enroll now")}
+<section class="tight-top"><div class="wrap"><div class="grid-3">
+  <div class="course course-feature reveal"><span class="meta">Self-paced &middot; ~2 hours &middot; 17 lessons</span><h3>AI Foundations for Business</h3><p>For anyone new to AI. What it can and can't do, and where it fits in your work.</p>{MODLIST}<div class="foot"><strong>$149</strong><a class="btn btn-primary btn-small" href="contact.html">Enroll now</a></div></div>
   {course("Self-paced &middot; ~3 hours", "Prompting That Works", "For everyday users of ChatGPT, Claude or Copilot who want better results, faster.", "$199", "Enroll now")}
   {course("Live on Zoom &middot; Half day", "AI for Leaders", "For owners and executives setting AI strategy, budgets and expectations. Private sessions for your leadership team (up to 12): $2,750.", "$395 / seat", "Reserve a seat")}
   {course("Live on Zoom &middot; 2 hours", "Responsible AI &amp; Policy", "For leadership, HR and compliance teams writing the rules for safe AI use. Private team session: $1,500.", "$195 / seat", "Reserve a seat")}
   {course("Live on Zoom &middot; Full day", "Team Bootcamp", "A custom, hands-on day for a whole department of up to 20 people, built around its real work.", "From $4,500", "Get a quote")}
 </div>
-<p class="fine reveal" style="margin-top:28px;font-size:14px;color:var(--slate)">Get both self-paced courses for $299, or $199 per person for teams of 5 or more. All live sessions run on Zoom with screen sharing. Self-paced courses are digital and non-refundable. Live workshops are fully refundable up to 7 days before the start date. <a href="terms.html#refunds">Refund policy</a></p>
+<p class="fine reveal">Get both self-paced courses for $299, or $199 per person for teams of 5 or more. All live sessions run on Zoom with screen sharing. Self-paced courses are digital and non-refundable. Live workshops are fully refundable up to 7 days before the start date. <a href="terms.html#refunds">Refund policy</a></p>
 </div></section>
 {CTA}'''
 
 about = f'''
 <section class="page-hero">{STRATA}<div class="wrap">
-  <span class="eyebrow reveal">About</span>
-  <h1 class="reveal">Why Talus?</h1>
+  <h1 class="reveal">Named for the bone that carries the weight.</h1>
 </div></section>
 <section style="padding-top:10px"><div class="wrap"><div class="split">
   <div class="reveal"><p class="quote">The talus is a small bone in the ankle that carries the full weight of the body with every step.</p></div>
-  <div class="reveal"><p class="lead">It connects the leg to the foot and turns that weight into forward motion. That is our role: the strength your business stands on as AI reshapes how work gets done.</p><h3 style="margin-top:36px">Our mission</h3><p style="color:var(--slate)">Help every business use AI with confidence, through clear teaching, honest advice and results you can measure.</p></div>
+  <div class="reveal"><p class="lead">It connects the leg to the foot and turns that weight into forward motion. That is our role: the strength your business stands on as AI reshapes how work gets done.</p><h3 style="margin-top:36px">Our mission</h3><p class="muted">Help every business use AI with confidence, through clear teaching, honest advice and results you can measure.</p></div>
 </div></div></section>
 <section class="white"><div class="wrap"><div class="split">
   <div class="reveal"><span class="eyebrow">Founder</span><h2>James E. Lewis</h2></div>
@@ -161,12 +161,12 @@ about = f'''
 
 contact = f'''
 <section class="page-hero">{STRATA}<div class="wrap">
-  <span class="eyebrow reveal">Contact</span>
-  <h1 class="reveal">Let's talk.</h1>
-  <p class="lead reveal">Pick a time for a free 30-minute discovery call, or send a message and we'll reply within one business day.</p>
+  <h1 class="reveal">Book a free 30&#8209;minute call.</h1>
+  <p class="lead reveal">Pick a time that suits you, or send a message and we'll reply within one business day.</p>
 </div></section>
 <section style="padding-top:10px"><div class="wrap"><div class="contact-grid">
   <div class="booking reveal" id="book">
+    <div class="booking-loading" aria-hidden="true"><span class="spinner"></span>Loading available times&hellip;</div>
     <iframe src="https://calendly.com/james-talusconsulting/30min?embed_domain=talusconsulting.net&amp;embed_type=Inline&amp;hide_gdpr_banner=1&amp;background_color=ffffff&amp;text_color=14213d&amp;primary_color=b08d57" title="Book a 30-minute discovery call with Talus" loading="lazy"></iframe>
     <p class="booking-alt">Calendar not loading? <a href="https://calendly.com/james-talusconsulting/30min" target="_blank" rel="noopener">Open the booking page &rarr;</a></p>
   </div>
@@ -184,7 +184,6 @@ contact = f'''
 def legal_page(title, updated, html):
     return f"""
 <section class="page-hero">{STRATA}<div class="wrap">
-  <span class="eyebrow">Legal</span>
   <h1>{title}</h1>
   <p class="lead">Last updated {updated}</p>
 </div></section>
